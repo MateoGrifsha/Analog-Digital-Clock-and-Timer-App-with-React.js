@@ -14,6 +14,33 @@ html{
   color: var(--font-color);
   text-align: center;
 }
+.navbar{
+  display: flex;
+  justify-content: space-around;
+  transform: translate(0, -100%);
+}
+.navbar p{
+  color: var(--background-color);
+  background-color: var(--font-color);
+  border-radius: 6px;
+  font-size: 24px;
+  padding: 6px;
+}
+.navbar a{
+  text-decoration: none;
+}
+.clocks{
+  width: 350px;
+  height: 500px;
+  background: rgb(32, 32, 32);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 16px rgb(66, 66, 66),
+              -4px -4px 16px rgb(163, 163, 163);
+}
 
 .digital-clock{
   font-family: 'Rajdhani', sans-serif;
@@ -22,15 +49,59 @@ html{
   background-color: var(--font-color);
   color: var(--background-color);
   border-radius: 8px;
+  width: 125px;
 }
 
 .analog-clock{
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-color: var(--font-color);
+  border: thick solid var(--font-color);
   margin-block: 40px;
+  position: relative;
 }
+
 .dial{
-  
+  transform-origin: bottom;
 }
+.seconds{
+  height: 75px;
+  width: 3px;
+  background-color: red;
+  position: absolute;
+  top: 12.5%;
+  left: 49%;
+  z-index: 3;
+  border-radius: 1px;
+}
+.minutes{
+  height: 60px;
+  width: 7px;
+  background-color: var(--font-color);
+  position: absolute;
+  top: 20%;
+  left: 48.5%;
+  z-index: 2;
+  border-radius: 1px;
+}
+.hours{
+  height: 40px;
+  width: 7px;
+  background-color: var(--font-color);
+  position: absolute;
+  top: 30%;
+  left: 49%;
+  z-index: 1;
+  border-radius: 1px;
+}
+.center-dot{
+  position: absolute;
+  top: 46.5%;
+  left: 46.5%;
+  z-index: 999;
+  height: 12px;
+  width: 12px;
+  background-color: var(--font-color);
+  border: thin solid var(--background-color);
+  border-radius: 50%;
+} 
