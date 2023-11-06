@@ -1,6 +1,15 @@
+import { useState, useEffect } from 'react'
+import Timer from './Timer';
+
 const Pomodoro = () => {
+    const [shortBreak, setShortBreak] = useState(false)
+    const [longBreak, setLongBreak] = useState(false)
+
+
     return ( 
-        <div>Pomodoro Timer</div>
+        <div>
+            <div><Timer /></div>
+        </div>
      );
 }
  

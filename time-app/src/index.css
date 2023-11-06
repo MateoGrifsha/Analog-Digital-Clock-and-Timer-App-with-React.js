@@ -17,7 +17,7 @@ html{
 .navbar{
   display: flex;
   justify-content: space-around;
-  transform: translate(0, -100%);
+  transform: translate(0, -60%);
 }
 .navbar p{
   color: var(--background-color);
