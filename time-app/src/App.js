@@ -1,7 +1,7 @@
 import AnalogClock from "./components/AnalogClock";
 import DigitalClock from "./components/DigitalClock";
 import Navbar from "./components/Navbar";
-import Pomodoro from "./components/Pomodoro";
+import TimerParent from "./components/TimerParent";
 import './index.css';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
@@ -21,7 +21,7 @@ function App() {
                             <DigitalClock />
                         </div>
                 }/>
-                <Route path="/pomodoro" element={<Pomodoro />} />
+                <Route path="/timer" element={<TimerParent />} />
               </Routes>
             </div>
       </div>

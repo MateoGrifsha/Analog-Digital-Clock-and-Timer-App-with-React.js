@@ -6,25 +6,39 @@
 }
 html{
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   font-family: 'Montserrat', sans-serif;
   background-color: var(--background-color);
   color: var(--font-color);
   text-align: center;
+  position: relative;
 }
 .navbar{
+  position: absolute;
   display: flex;
-  justify-content: space-around;
-  transform: translate(0, -60%);
+  justify-content: space-between;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 20px;
+  right: 30%;
+  text-align: center;
 }
-.navbar p{
-  color: var(--background-color);
-  background-color: var(--font-color);
+.navbar a{
   border-radius: 6px;
   font-size: 24px;
   padding: 6px;
+  color: var(--font-color);
+  width: 125px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar a:last-child{
+  color: var(--background-color);
+  background-color: var(--font-color);
 }
 .navbar a{
   text-decoration: none;
@@ -105,3 +119,68 @@ html{
   border: thin solid var(--background-color);
   border-radius: 50%;
 } 
+
+.startButton{
+  height: 50px;
+  width: 200px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  background-color: rgb(255, 62, 62);
+  color: var(--font-color);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+.startButton:hover{
+  transition: 0.25s ease-in-out;
+  background-color: rgb(240, 45, 45);
+}
+.timeHolder{
+  height: 350px;
+  width: 350px;
+  border: thick solid rgb(255, 62, 62);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block: 40px;
+}
+.timeHolder h2{
+  font-size: 64px;
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
+  font-size: 32px;
+  justify-content: center;
+  align-items: center;
+
+}
+.form-container input{
+  width: 350px;
+  height: 45px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 22px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+.form-container button{
+  width: 150px;
+  height: 35px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(255, 62, 62);
+  color: var(--font-color);
+  transition: 0.25s ease-in-out;
+  font-size: 18px;
+}
+.form-container button:hover{
+  transition: 0.25s ease-in-out;
+  background-color: rgb(240, 45, 45);
+}

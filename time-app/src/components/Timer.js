@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react"
 
 
-const Timer = () => {
+const Timer = ({timeValue, timeMinutes, timeSeconds}) => {
     const Ref = useRef(null)
-    const [timer, setTimer] = useState('00:00')
+    const [timer, setTimer] = useState(timeValue)
 
     const timeRemaining = (e) => {
         const total = Date.parse(e) - Date.parse(new Date())
@@ -22,40 +22,30 @@ const Timer = () => {
     }
      
     const clearTimer = (e) => {
- 
-        // If you adjust it you should also need to
-        // adjust the Endtime formula we are about
-        // to code next    
-        setTimer('01:10');
- 
-        // If you try to remove this line the 
-        // updating of timer Variable will be
-        // after 1000ms or 1sec
+
+        setTimer(timeValue);
         if (Ref.current) clearInterval(Ref.current);
         const id = setInterval(() => {
             startTimer(e);
         }, 1000)
         Ref.current = id;
     }
-    useEffect(() => {
-        clearTimer(getDeadTime());
-    }, []);
-    const onClickReset = () => {
+    const onClickStart = () => {
         clearTimer(getDeadTime());
     }
     const getDeadTime = () => {
         let deadline = new Date();
- 
-        // This is where you need to adjust if 
-        // you entend to add more time
-        deadline.setSeconds(deadline.getSeconds() + 70);
+        let totalTimeSeconds = timeSeconds + (timeMinutes * 60)
+        deadline.setSeconds(deadline.getSeconds() + totalTimeSeconds);
         return deadline;
     }
 
     return(
         <div>
-            <h2>{timer}</h2>
-            <button onClick={onClickReset}>Reset</button>
+            <div className="timeHolder">
+              <h2>{timer}</h2>  
+            </div>
+              <button onClick={onClickStart} className="startButton">START</button>
         </div>
     )
 }
